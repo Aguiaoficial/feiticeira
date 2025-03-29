@@ -132,7 +132,7 @@
         }
 
         .cotacoes, .vantagens, .palpites {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.3); /* Transparência suave */
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -162,10 +162,52 @@
             color: #333;
         }
 
-        .vantagens p {
-            background: linear-gradient(90deg, #ff8000, #0000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .vantagens {
+            background: none; /* Remove fundo padrão para os cards */
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .vantagens h2 {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .vantagem-card {
+            width: 200px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(255, 0, 255, 0.4)); /* Mesmo gradiente das cotações, com transparência */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            color: #fff;
+        }
+
+        .vantagem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .vantagem-card h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #fff; /* Letras brancas para maior contraste */
+            text-shadow: 0 0 3px rgba(0,0,0,0.5); /* Sombra para destacar */
+        }
+
+        .vantagem-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #fff; /* Letras brancas */
+            text-shadow: 0 0 3px rgba(0,0,0,0.5); /* Sombra para destacar */
         }
 
         .palpites select {
@@ -246,10 +288,22 @@
 
     <div class="vantagens">
         <h2>Vantagens de se cadastrar</h2>
-        <p><strong>Rapidez</strong><br>Saques e recargas automáticas em segundos.</p>
-        <p><strong>Segurança</strong><br>Dados protegidos com tecnologia avançada.</p>
-        <p><strong>Facilidade</strong><br>Cadastro simples e rápido.</p>
-        <p><strong>Confiança</strong><br>Transparência e suporte dedicado.</p>
+        <div class="vantagem-card">
+            <h3>Rapidez</h3>
+            <p>Saques e recargas automáticas em segundos.</p>
+        </div>
+        <div class="vantagem-card">
+            <h3>Segurança</h3>
+            <p>Dados protegidos com tecnologia avançada.</p>
+        </div>
+        <div class="vantagem-card">
+            <h3>Facilidade</h3>
+            <p>Cadastro simples e rápido.</p>
+        </div>
+        <div class="vantagem-card">
+            <h3>Confiança</h3>
+            <p>Transparência e suporte dedicado.</p>
+        </div>
     </div>
 
     <div class="palpites" id="palpites">
