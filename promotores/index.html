@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seja Promotor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      color: #1f2937;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #10b981;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #059669;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Seja Promotor</h1>
+    <p>Preencha seus dados para entrar em contato.</p>
+    <input type="text" id="nome" placeholder="Seu nome" required />
+    <input type="tel" id="telefone" placeholder="Seu telefone" required />
+    <button onclick="enviarParaWhatsApp()">Enviar</button>
+  </div>
+
+  <script>
+    function enviarParaWhatsApp() {
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      if (!nome || !telefone) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      const mensagem = `Olá! Meu nome é ${nome} e meu número é ${telefone}. Quero ser um promotor.`;
+      const numeroDestino = "5583991177252"; // DDI 55 + DDD 83 + número
+      const link = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, "_blank");
+    }
+  </script>
+</body>
+</html>
